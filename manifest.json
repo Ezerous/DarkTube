@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "DarkTube",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Forces YouTube to use dark theme.",
   "developer": {
     "name": "Ezerous",

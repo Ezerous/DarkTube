@@ -8,13 +8,12 @@ browser.cookies.onChanged.addListener(function(changeInfo) {
 function setCookie() {
   var cookies = browser.cookies.getAll({name:"PREF", domain: ".youtube.com"}).then(
     (cookies) => {
-      var newValue;
       if(cookies[0])
-        newValue = patchValue(cookies[0].value);
+        storedCookieValue = patchValue(cookies[0].value);
       else
-        newValue = "f6=400";
+        storedCookieValue = "f6=400";
 
-      browser.cookies.set({name: "PREF", url: "http://.youtube.com/", value: newValue});
+      browser.cookies.set({name: "PREF", url: "http://.youtube.com/", value: storedCookieValue});
     }
   );
 
