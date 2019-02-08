@@ -12,8 +12,7 @@
     "96": "icons/icon.svg"
   },
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
+    "cookies",
     "*://*.youtube.com/"
   ],
   "background": {
