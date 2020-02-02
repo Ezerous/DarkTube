@@ -215,3 +215,7 @@ ytd-masthead .masthead-skeleton-icon {
 ytd-masthead .gsst_e {
  filter: invert(100%);
 }
+
+ytd-consent-bump-renderer {
+	display: none;
+}
