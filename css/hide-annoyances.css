@@ -1,0 +1,14 @@
+/* Hide consent bump */
+div#ticker ytd-consent-bump-renderer {
+	display: none;
+}
+
+/* Hide sign in tooltip */
+div#contentWrapper yt-tooltip-renderer {
+	display: none;
+}
+
+/* Hide buy offer */
+div#offer-module {
+	display: none;
+}
