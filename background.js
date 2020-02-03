@@ -29,10 +29,19 @@ function patchCookieValue(value) {
   return value;
 }
 
-// Run once when add-on starts
-browser.cookies.getAllCookieStores().then(
-  (cookieStores) => {
-    for (let store of cookieStores)
-      setCookie(store.id);
-  }
-);
+function setCookieToAllStores(){
+  browser.cookies.getAllCookieStores().then(
+    (cookieStores) => {
+      for (let store of cookieStores)
+        setCookie(store.id);
+    }
+  );
+}
+
+// Set cookies when a new window is created
+browser.windows.onCreated.addListener(() => {
+  setCookieToAllStores();
+});
+
+// Set cookies once when the extension starts
+setCookieToAllStores();
