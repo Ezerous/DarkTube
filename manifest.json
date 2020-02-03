@@ -1,11 +1,16 @@
 {
   "manifest_version": 2,
   "name": "DarkTube",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Forces YouTube to use dark theme.",
   "developer": {
     "name": "Ezerous",
     "url": "https://github.com/Ezerous"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{2b686e8e-e569-4940-9b64-55cfe0bb2599}"
+    }
   },
   "icons": {
     "48": "icons/icon.svg",
