@@ -15,17 +15,16 @@ function setCookie(storeId) {
   );
 }
 
-// Patches cookie value for dark theme (f6) and disables autoplay if it is not set by the user (f5)
+// Patches cookie value for dark theme (f6) and autoplay (f5)
 function patchCookieValue(value) {
-  value = value.replace(/&?f6=\d+/, "");
   if(!value)
     value = "f6=400&f5=30000";
   else {
-    if(value.startsWith('&'))
-      value = value.substr(1);
-    value = value + "&f6=400";
-    if(!value.includes("f5"))  //User has made his own choice about autoplay
-      value = value + "&f5=30000";
+    value = value.replace(/f6=\d+/, "f6=400");
+    if (!value.includes("f6"))
+      value = value + "&f6=400";
+    if(!value.includes("f5"))  // User hasn't made yet his own choice about autoplay
+      value = value + "&f5=30000";  // Disable it
   }
   return value;
 }
