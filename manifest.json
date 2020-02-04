@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "DarkTube",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Forces YouTube to use dark theme.",
   "developer": {
     "name": "Ezerous",
@@ -13,13 +13,13 @@
     }
   },
   "icons": {
-    "48": "icons/icon.svg",
-    "96": "icons/icon.svg"
+    "48": "icons/darktube_logo.svg",
+    "96": "icons/darktube_logo.svg"
   },
   "content_scripts": [
     {
       "matches": ["*://*.youtube.com/*"],
-      "css": ["css/hide-annoyances.css"]
+      "css": ["css/darktube.css"]
     }
   ],
   "permissions": [
