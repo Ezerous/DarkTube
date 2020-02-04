@@ -7,10 +7,8 @@ chrome.cookies.onChanged.addListener(function(changeInfo) {
 });
 
 function setCookie(storeId) {
-  console.debug("setting cookie...");
   chrome.cookies.getAll({name:"PREF", domain:".youtube.com", storeId:storeId},
     function(cookies){
-      console.dir(cookies)
       if(cookies[0])  // Check if cookie exists (just in case)
         patchedCookieValue = patchCookieValue(cookies[0].value);
       else

@@ -6,8 +6,9 @@
   "author": "Ezerous",
   "homepage_url": "https://github.com/Ezerous/DarkTube",
   "icons": {
-    "48": "icons/darktube_logo.svg",
-    "96": "icons/darktube_logo.svg"
+    "48": "icons/darktube_logo_48.png",
+    "96": "icons/darktube_logo_96.png",
+    "128": "icons/darktube_logo_128.png"
   },
   "content_scripts": [
     {
