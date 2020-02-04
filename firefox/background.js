@@ -1,16 +1,19 @@
 browser.cookies.onChanged.addListener(function(changeInfo) {
-  if(changeInfo.cookie.name == "PREF")
-    setCookie(changeInfo.cookie.storeId);
+  const cookie = changeInfo.cookie;
+  if(cookie.name == "PREF"
+    && ((!cookie.value.includes("f6=400") || (!cookie.value.includes("f5=")))
+      || changeInfo.removed))
+      setCookie(cookie.storeId);
 });
 
 function setCookie(storeId) {
   browser.cookies.getAll({name:"PREF", domain:".youtube.com", storeId:storeId}).then(
     (cookies) => {
-      if(cookies[0])  // Check if cookie exists
+      if(cookies[0])  // Check if cookie exists (just in case)
         patchedCookieValue = patchCookieValue(cookies[0].value);
       else
         patchedCookieValue = "f6=400";
-      browser.cookies.set({name:"PREF", url: "http://.youtube.com/", value:patchedCookieValue, storeId:storeId});
+      browser.cookies.set({name:"PREF", url: "https://.youtube.com/", value:patchedCookieValue, storeId:storeId});
     }
   );
 }
